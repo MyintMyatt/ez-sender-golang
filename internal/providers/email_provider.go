@@ -58,7 +58,7 @@ func (e *EmailProvider) SendNotification(ctx context.Context, request *models.No
         },
         TemplateID: templateID,
         TemplateLanguage: true,
-		Variables: map[string]interface{}{"name" : "Customer"}, //
+		Variables: request.Data,
         Subject: request.Subject,
       },
     }
