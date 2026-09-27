@@ -10,8 +10,8 @@ import (
 
 const (
 	// Exchanges
-	MainExchange = "notification.main.exchange"
-	DlxExchange  = "notification.dlx.exchange"
+	MainExchange = "ez-sender.main.exchange"
+	DlxExchange  = "ez-sender.dlx.exchange"
 
 	// Security Queues
 	SecurityEmailQueue = "q.security.email"
@@ -34,8 +34,8 @@ const (
 	RetryFCMQueue   = "q.retry.fcm"
 
 	// Dead Letter Queue
-	DlqQueue      = "notification.dlx.queue"
-	DlxRoutingKey = "notification.dlx.routing.key"
+	DlqQueue      = "q.dlx.queue"
+	DlxRoutingKey = "ez-sender.dlx.routing.key"
 )
 
 type RabbitMQClient struct {

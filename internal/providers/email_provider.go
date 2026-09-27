@@ -32,7 +32,6 @@ func (e *EmailProvider) Channel() models.Channel {
 
 func (e *EmailProvider) SendNotification(ctx context.Context, request *models.NotificationRequest) error {
 	slog.Info("[-]:Sending mail.....", "recipient", request.Recipient)
-
 	mjClient := mailjet.NewMailjetClient(e.publicKey, e.privateKey)
 	var templateID int
 	var err error
@@ -67,6 +66,7 @@ func (e *EmailProvider) SendNotification(ctx context.Context, request *models.No
 	res, err := mjClient.SendMailV31(&messages)
 	if err != nil {
 		slog.Error(err.Error())
+		return err
 	}
 
 	fmt.Printf("Data: %+v\n", res)
